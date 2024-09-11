@@ -1,0 +1,92 @@
+<!-- src/app/components/projet.component.html -->
+
+<div class="container">
+  <h2>Ajouter un Projet</h2>
+
+  <form (ngSubmit)="ajouterProjet()" #projetForm="ngForm">
+    <!-- Le formulaire reste le même -->
+    <div class="form-group">
+      <label for="nom">Nom</label>
+      <input 
+        type="text" 
+        id="nom" 
+        class="form-control" 
+        [(ngModel)]="nouveauProjet.nom" 
+        name="nom" 
+        required 
+        #nom="ngModel"
+      />
+      <div *ngIf="nom.invalid && nom.touched" class="text-danger">
+        Le nom est requis.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea 
+        id="description" 
+        class="form-control" 
+        [(ngModel)]="nouveauProjet.description" 
+        name="description" 
+        required 
+        #description="ngModel"
+      ></textarea>
+      <div *ngIf="description.invalid && description.touched" class="text-danger">
+        La description est requise.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="dateDebut">Date de Début</label>
+      <input 
+        type="date" 
+        id="dateDebut" 
+        class="form-control" 
+        [(ngModel)]="nouveauProjet.dateDebut" 
+        name="dateDebut" 
+        required 
+        #dateDebut="ngModel"
+      />
+      <div *ngIf="dateDebut.invalid && dateDebut.touched" class="text-danger">
+        La date de début est requise.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="dateFin">Date de Fin</label>
+      <input 
+        type="date" 
+        id="dateFin" 
+        class="form-control" 
+        [(ngModel)]="nouveauProjet.dateFin" 
+        name="dateFin" 
+        required 
+        #dateFin="ngModel"
+      />
+      <div *ngIf="dateFin.invalid && dateFin.touched" class="text-danger">
+        La date de fin est requise.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="budget">Budget</label>
+      <input 
+        type="number" 
+        id="budget" 
+        class="form-control" 
+        [(ngModel)]="nouveauProjet.budget" 
+        name="budget" 
+        required 
+        #budget="ngModel"
+      />
+      <div *ngIf="budget.invalid && budget.touched" class="text-danger">
+        Le budget est requis.
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="projetForm.invalid">Ajouter Projet</button>
+  </form>
+
+  <!-- Lien de navigation ajouté après le formulaire -->
+  <a routerLink="/">Retour à la page d'accueil</a>
+</div>
