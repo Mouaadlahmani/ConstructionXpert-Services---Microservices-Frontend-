@@ -12,12 +12,12 @@ export class RessourcesService {
 
   constructor(private httpClient: HttpClient) { }
 
-  addRessource(ressource: Ressources):Observable<Object>{
-     return this.httpClient.post(this.url+'add',ressource);
+  addRessource(id:number, ressource: Ressources):Observable<Object>{
+     return this.httpClient.post(this.url+`add/${id}`,ressource);
   }
 
   getRessourceByTacheId(id:number):Observable<Ressources[]>{
-    return this.httpClient.get<Ressources[]>(`${this.url}tache/${id}`)
+    return this.httpClient.get<Ressources[]>(`${this.url}${id}`)
   }
 
   getRessourceById(id:number):Observable<Ressources>{

@@ -1,2 +1,8 @@
-<!-- src/app/app.component.html -->
+<mat-toolbar color="primary">
+  <span>My Navbar</span>
+  <span class="spacer"></span>
+  <button mat-button *ngIf="!showNavButtons" routerLink="/home">Home</button>
+  <button mat-button *ngIf="!showNavButtons" routerLink="/contact">Contact</button>
+  <button mat-button *ngIf="!showNavButtons" (click)="logout()">Logout</button>
+</mat-toolbar>
 <router-outlet></router-outlet>

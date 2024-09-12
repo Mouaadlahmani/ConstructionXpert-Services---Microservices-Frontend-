@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit{
       (response: Jwt) => {
         const jwtToken = response.token;
         localStorage.setItem('token', jwtToken);
-        this.router.navigate(['home'])
+        this.router.navigate(['all-projets'])
       }
     );
   }

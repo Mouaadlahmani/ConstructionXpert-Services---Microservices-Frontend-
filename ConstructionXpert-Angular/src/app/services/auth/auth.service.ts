@@ -24,4 +24,8 @@ export class AuthService {
   validateToken(token: string): Observable<string> {
     return this.httpClient.get<string>(this.url + 'validate?token=' + token);
   }
+
+  logout():void{
+    localStorage.removeItem('token')
+  }
 }
