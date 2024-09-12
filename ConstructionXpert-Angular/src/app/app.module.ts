@@ -1,7 +1,9 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';  // Importez RouterModule
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './components/auth/login/login.component';
@@ -14,6 +16,9 @@ import { EditRessourcesComponent } from './components/Ressources/edit-ressources
 import {MatCardModule} from "@angular/material/card";
 import {MatInputModule} from "@angular/material/input";
 import {MatCheckboxModule} from "@angular/material/checkbox";
+import { ProjetComponent } from './projet/projet.component';
+import { AppRoutingModule } from './app-routing.module';
+import { ProjetsListComponent } from './list-projet/list-projet.component';
 
 @NgModule({
   declarations: [
@@ -34,8 +39,11 @@ import {MatCheckboxModule} from "@angular/material/checkbox";
     MatCardModule,
     MatInputModule,
     MatCheckboxModule
+    ProjetComponent,
+    ProjetsListComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

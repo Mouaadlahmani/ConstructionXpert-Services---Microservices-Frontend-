@@ -1,17 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {LoginComponent} from "./components/auth/login/login.component";
-import {RegisterComponent} from "./components/auth/register/register.component";
-import {AddRessourcesComponent} from "./components/Ressources/add-ressources/add-ressources.component";
-import {EditRessourcesComponent} from "./components/Ressources/edit-ressources/edit-ressources.component";
-import {AppComponent} from "./app.component";
+import { ProjetComponent } from './projet/projet.component';
+import { ProjetsListComponent } from './list-projet/list-projet.component';
 
 const routes: Routes = [
-  {path:'', component:LoginComponent},
-  {path:'register', component:RegisterComponent},
-  {path:'add-ressource',component:AddRessourcesComponent},
-  {path:'edit/:id', component:EditRessourcesComponent},
-
+  { path: 'create-projet', component: ProjetComponent },   // Chemin vers le composant de création de projet
+  { path: 'all-projets', component: ProjetsListComponent }, // Chemin vers le composant de la liste des projets
+  { path: '', redirectTo: '/create-projet', pathMatch: 'prefix' }, // Modifiez pathMatch à 'prefix'
 ];
 
 @NgModule({
