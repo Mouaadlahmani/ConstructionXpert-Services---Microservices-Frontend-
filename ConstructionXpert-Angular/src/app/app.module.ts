@@ -1,4 +1,3 @@
-// src/app/app.module.ts
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -7,12 +6,14 @@ import { RouterModule } from '@angular/router';  // Importez RouterModule
 
 import { AppComponent } from './app.component';
 import { ProjetComponent } from './projet/projet.component';
-import { AppRoutingModule } from './app-routing.module';  // Importez AppRoutingModule
+import { AppRoutingModule } from './app-routing.module';
+import { ProjetsListComponent } from './list-projet/list-projet.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProjetComponent
+    ProjetComponent,
+    ProjetsListComponent
   ],
   imports: [
     BrowserModule,
@@ -24,3 +25,4 @@ import { AppRoutingModule } from './app-routing.module';  // Importez AppRouting
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
