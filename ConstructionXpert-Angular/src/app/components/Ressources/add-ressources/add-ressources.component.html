@@ -1,0 +1,42 @@
+<!-- src/app/components/projet.component.html -->
+
+<div class="container">
+  <h2>Ajouter un Ressource</h2>
+
+  <form (ngSubmit)="onSubmit()" #projetForm="ngForm">
+    <!-- Le formulaire reste le même -->
+    <div class="form-group">
+      <label for="nom">Nom</label>
+      <input
+        type="text"
+        id="nom"
+        class="form-control"
+        [(ngModel)]="ressources.nom"
+        name="nom"
+        required
+        #nom="ngModel"
+      />
+      <div *ngIf="nom.invalid && nom.touched" class="text-danger">
+        Le nom est requis.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="budget">Budget</label>
+      <input
+        type="number"
+        id="budget"
+        class="form-control"
+        [(ngModel)]="ressources.quantity"
+        name="budget"
+        required
+        #budget="ngModel"
+      />
+      <div *ngIf="budget.invalid && budget.touched" class="text-danger">
+        Le budget est requis.
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="projetForm.invalid">Ajouter Projet</button>
+  </form>
+</div>
