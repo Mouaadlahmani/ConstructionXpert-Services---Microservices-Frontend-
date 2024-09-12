@@ -1,0 +1,29 @@
+<div class="container">
+  <h2>Liste des Projets</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Description</th>
+        <th>Date de Début</th>
+        <th>Date de Fin</th>
+        <th>Budget</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let projet of projets">
+        <td>{{ projet.id }}</td>
+        <td>{{ projet.nom }}</td>
+        <td>{{ projet.description }}</td>
+        <td>{{ projet.dateDebut | date }}</td>
+        <td>{{ projet.dateFin | date }}</td>
+        <td>{{ projet.budget | currency }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
+</div>
+
