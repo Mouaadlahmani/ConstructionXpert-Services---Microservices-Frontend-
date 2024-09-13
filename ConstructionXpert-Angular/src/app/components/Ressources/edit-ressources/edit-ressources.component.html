@@ -1,0 +1,16 @@
+<div class="container">
+  <h3>Modier cours</h3>
+  <div class="formulaire">
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-goup">
+        <label>Nom</label>
+        <input type="text" class="form-control" [(ngModel)]="ressource.nom" name="Nom" id="Nom">
+      </div>
+      <div class="form-goup">
+        <label>Quantity</label>
+        <textarea type="text" class="form-control" [(ngModel)]="ressource.quantity" name="description" id="description"></textarea>
+      </div>
+      <button class="btn btn-success">Submit</button>
+    </form>
+  </div>
+</div>

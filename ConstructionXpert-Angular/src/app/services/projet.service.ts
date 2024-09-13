@@ -28,5 +28,4 @@ export class ProjetsService {
   deleteProjets(id: number): Observable<void> { // Utilisez Observable<void> car la réponse est vide
     return this.http.delete<void>(`${this.apiUrl}/delete/${id}`);
   }
-
 }
