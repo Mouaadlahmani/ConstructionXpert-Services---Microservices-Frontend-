@@ -15,7 +15,6 @@ import {MatCardModule} from "@angular/material/card";
 import {MatInputModule} from "@angular/material/input";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import { AppRoutingModule } from './app-routing.module';
-import { ProjetsListComponent } from './list-projet/list-projet.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -23,11 +22,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {ProjetComponent} from "./projet/projet.component";
+import {ProjetsListComponent} from "./list-projet/list-projet.component";
 import {AuthInterceptor} from "./Interceptor/auth.interceptor";
 import { DisplayRessourcesComponent } from './components/Ressources/display-ressources/display-ressources.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +37,7 @@ import {MatToolbarModule} from "@angular/material/toolbar";
     ProjetComponent,
     ProjetsListComponent,
     DashboardComponent,
+    DisplayRessourcesComponent
   ],
   imports: [
     BrowserModule,
