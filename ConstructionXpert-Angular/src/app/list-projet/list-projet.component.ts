@@ -28,5 +28,23 @@ export class ProjetsListComponent implements OnInit {
       }
     );
   }
-}
+  deleteProjet(id: number | undefined): void {
+    if (id === undefined) {
+      this.errorMessage = 'ID du projet est indéfini.';
+      return;
+    }
 
+    if (confirm('Êtes-vous sûr de vouloir supprimer ce projet ?')) {
+      this.projetsService.deleteProjets(id).subscribe(
+        () => {
+          this.projets = this.projets.filter(projet => projet.id !== id);
+        },
+        (error) => {
+          console.error('Erreur lors de la suppression du projet', error);
+          this.errorMessage = 'Une erreur est survenue lors de la suppression du projet.'; // Attribution d'un message d'erreur
+        }
+      );
+    }
+  }
+
+}

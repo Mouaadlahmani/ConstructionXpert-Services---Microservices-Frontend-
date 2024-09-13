@@ -1,0 +1,26 @@
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+  }
+  
+  .dashboard-card {
+    margin: 16px 0;
+  }
+  
+  mat-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  mat-grid-list {
+    width: 100%;
+    height: 100%;
+  }
+  
+  mat-table {
+    width: 100%;
+  }
+  

@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import { Projets } from '../model/projet';
 
 @Injectable({
@@ -22,4 +21,11 @@ export class ProjetsService {
     return this.http.get<Projets[]>(`${this.apiUrl}/all`);
   }
 
+  updateProjets(id:number, Projets: Projets):Observable<Object>{
+    return this.http.put(`${this.apiUrl}edit/${id}`, Projets);
+  }
+  // Méthode pour supprimer un projet
+  deleteProjets(id: number): Observable<void> { // Utilisez Observable<void> car la réponse est vide
+    return this.http.delete<void>(`${this.apiUrl}/delete/${id}`);
+  }
 }

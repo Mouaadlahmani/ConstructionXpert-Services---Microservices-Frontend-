@@ -9,6 +9,7 @@
         <th>Date de Début</th>
         <th>Date de Fin</th>
         <th>Budget</th>
+        <th>Actions</th> <!-- Nouvelle colonne pour les actions -->
       </tr>
     </thead>
     <tbody>
@@ -19,6 +20,10 @@
         <td>{{ projet.dateDebut | date }}</td>
         <td>{{ projet.dateFin | date }}</td>
         <td>{{ projet.budget | currency }}</td>
+        <td>
+          <!-- Vérifiez que `projet.id` est défini avant d'appeler `deleteProjet` -->
+          <button *ngIf="projet.id !== undefined" (click)="deleteProjet(projet.id)" class="btn btn-danger">Supprimer</button>
+        </td>
       </tr>
     </tbody>
   </table>
@@ -26,4 +31,3 @@
     {{ errorMessage }}
   </div>
 </div>
-

@@ -14,6 +14,7 @@ const routes: Routes = [
   {path:'register', component:RegisterComponent},
   { path: 'create-projet', component: ProjetComponent },   // Chemin vers le composant de création de projet
   { path: 'all-projets', component: ProjetsListComponent }, // Chemin vers le composant de la liste des projets
+  { path: 'projets/edit/:id', component: ProjetComponent }, // Chemin pour l'édition
   { path: 'add-ressource/:id', component:AddRessourcesComponent },
   { path: 'edit-ressource/:id', component:EditRessourcesComponent },
   { path: 'ressources/:id', component:DisplayRessourcesComponent },

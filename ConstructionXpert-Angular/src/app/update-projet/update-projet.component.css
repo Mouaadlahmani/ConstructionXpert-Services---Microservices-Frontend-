@@ -1,0 +1,34 @@
+/* Container for the form */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Space between form fields */
+    padding: 16px;
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  /* Style for the form fields */
+  mat-form-field {
+    width: 100%;
+  }
+  
+  /* Error message styling */
+  mat-error {
+    color: red; /* Customize the error text color */
+    font-size: 12px; /* Customize the error text size */
+  }
+  
+  /* Button styling */
+  button {
+    margin-top: 16px; /* Space above the buttons */
+  }
+  
+  button.mat-raised-button {
+    margin-right: 8px; /* Space between buttons */
+  }
+  
+  button.mat-button {
+    margin-left: 8px; /* Space between buttons */
+  }
+  
