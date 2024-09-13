@@ -21,6 +21,7 @@ export class ProjetsService {
     return this.http.get<Projets[]>(`${this.apiUrl}/all`);
   }
 
+
   updateProjets(id:number, Projets: Projets):Observable<Object>{
     return this.http.put(`${this.apiUrl}edit/${id}`, Projets);
   }
@@ -28,5 +29,6 @@ export class ProjetsService {
   deleteProjets(id: number): Observable<void> { // Utilisez Observable<void> car la réponse est vide
     return this.http.delete<void>(`${this.apiUrl}/delete/${id}`);
   }
+
 
 }
