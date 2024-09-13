@@ -8,18 +8,33 @@ import { AppComponent } from './app.component';
 import { ProjetComponent } from './projet/projet.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ProjetsListComponent } from './list-projet/list-projet.component';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProjetComponent,
-    ProjetsListComponent
+    ProjetsListComponent,
+    DashboardComponent,
+
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    AppRoutingModule  // Ajoutez AppRoutingModule ici
+    AppRoutingModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatButtonModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

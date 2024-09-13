@@ -6,7 +6,9 @@ import { ProjetsListComponent } from './list-projet/list-projet.component';
 const routes: Routes = [
   { path: 'create-projet', component: ProjetComponent },   // Chemin vers le composant de création de projet
   { path: 'all-projets', component: ProjetsListComponent }, // Chemin vers le composant de la liste des projets
-  { path: '', redirectTo: '/create-projet', pathMatch: 'prefix' }, // Modifiez pathMatch à 'prefix'
+  { path: '', redirectTo: '/create-projet', pathMatch: 'full' },
+  { path: 'projets/edit/:id', component: ProjetComponent }, // Chemin pour l'édition
+
 ];
 
 @NgModule({
