@@ -9,11 +9,10 @@
         <th>Date de Début</th>
         <th>Date de Fin</th>
         <th>Budget</th>
-        <th>Actions</th> <!-- Nouvelle colonne pour les actions -->
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let projet of projets">
+      <tr (click)="toTaches(projet.id)" *ngFor="let projet of projets">
         <td>{{ projet.id }}</td>
         <td>{{ projet.nom }}</td>
         <td>{{ projet.description }}</td>
@@ -21,8 +20,7 @@
         <td>{{ projet.dateFin | date }}</td>
         <td>{{ projet.budget | currency }}</td>
         <td>
-          <!-- Vérifiez que `projet.id` est défini avant d'appeler `deleteProjet` -->
-          <button *ngIf="projet.id !== undefined" (click)="deleteProjet(projet.id)" class="btn btn-danger">Supprimer</button>
+          <button class="btn btn-primary" (click)="addTache(projet.id)">Ajouter Tache</button>
         </td>
       </tr>
     </tbody>
@@ -31,3 +29,4 @@
     {{ errorMessage }}
   </div>
 </div>
+

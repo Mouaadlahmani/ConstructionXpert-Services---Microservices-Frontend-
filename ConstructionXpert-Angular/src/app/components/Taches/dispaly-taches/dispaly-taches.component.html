@@ -1,0 +1,32 @@
+<div class="container">
+  <h2>Liste des Taches</h2>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>description</th>
+      <th>Date Debut</th>
+      <th>Date Fin</th>
+      <th>Statut</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr (click)="toRessources(tache.id)" *ngFor="let tache of taches">
+      <td>{{ tache.id }}</td>
+      <td>{{ tache.description }}</td>
+      <td>{{ tache.dateDebut }}</td>
+      <td>{{ tache.dateFin }}</td>
+      <td>{{ tache.statut }}</td>
+      <td>
+        <button class="btn btn-primary" (click)="editTache(tache.id)">Edit</button>
+      </td>
+      <td>
+        <button class="btn btn-danger" (click)="deleteTache(tache.id)">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+

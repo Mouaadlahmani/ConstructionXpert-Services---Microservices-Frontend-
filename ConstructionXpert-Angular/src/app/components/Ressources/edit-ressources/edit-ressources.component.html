@@ -1,16 +1,42 @@
+<!-- src/app/components/projet.component.html -->
+
 <div class="container">
-  <h3>Modier cours</h3>
-  <div class="formulaire">
-    <form (ngSubmit)="onSubmit()">
-      <div class="form-goup">
-        <label>Nom</label>
-        <input type="text" class="form-control" [(ngModel)]="ressource.nom" name="Nom" id="Nom">
+  <h2>Modifier un Ressource</h2>
+
+  <form (ngSubmit)="onSubmit()" #projetForm="ngForm">
+    <!-- Le formulaire reste le même -->
+    <div class="form-group">
+      <label for="nom">Nom</label>
+      <input
+        type="text"
+        id="nom"
+        class="form-control"
+        [(ngModel)]="ressource.nom"
+        name="nom"
+        required
+        #nom="ngModel"
+      />
+      <div *ngIf="nom.invalid && nom.touched" class="text-danger">
+        Le nom est requis.
       </div>
-      <div class="form-goup">
-        <label>Quantity</label>
-        <textarea type="text" class="form-control" [(ngModel)]="ressource.quantity" name="description" id="description"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="budget">Budget</label>
+      <input
+        type="number"
+        id="budget"
+        class="form-control"
+        [(ngModel)]="ressource.quantity"
+        name="budget"
+        required
+        #budget="ngModel"
+      />
+      <div *ngIf="budget.invalid && budget.touched" class="text-danger">
+        Le budget est requis.
       </div>
-      <button class="btn btn-success">Submit</button>
-    </form>
-  </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="projetForm.invalid">Modifier</button>
+  </form>
 </div>

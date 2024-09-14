@@ -1,0 +1,68 @@
+<div class="container">
+  <h2>Modifier un Tache</h2>
+
+  <form (ngSubmit)="onSubmit()" #projetForm="ngForm">
+
+    <div class="form-group">
+      <label for="Description">Description</label>
+      <input
+        type="text"
+        id="Description"
+        class="form-control"
+        [(ngModel)]="tache.description"
+        name="budget"
+        required
+        #budget="ngModel"
+      />
+      <div *ngIf="budget.invalid && budget.touched" class="text-danger">
+        Le budget est requis.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="dateDebut">Date Debut</label>
+      <input
+        type="date"
+        id="dateDebut"
+        class="form-control"
+        [(ngModel)]="tache.dateDebut"
+        name="nom"
+        required
+        #nom="ngModel"
+      />
+      <div *ngIf="nom.invalid && nom.touched" class="text-danger">
+        Le nom est requis.
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label for="dateFin">Date Fin</label>
+      <input
+        type="date"
+        id="dateFin"
+        class="form-control"
+        [(ngModel)]="tache.dateFin"
+        name="nom"
+        required
+        #nom="ngModel"
+      />
+      <div *ngIf="nom.invalid && nom.touched" class="text-danger">
+        Le nom est requis.
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label for="etat">État de l'équipement</label>
+      <select id="etat" [(ngModel)]="tache.statut" name="etat" class="form-control" required>
+        <option [ngValue]="statut.A_FAIRE">A FAIRE</option>
+        <option [ngValue]="statut.EN_COURS">EN COURS</option>
+        <option [ngValue]="statut.TERMINE">TERMINE</option>
+      </select>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary" [disabled]="projetForm.invalid">Modifier</button>
+  </form>
+</div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Projets } from '../model/projet';
-import { ProjetsService } from '../services/projet.service';
+import { ProjetsService } from '../services/projet/projet.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-projet-list',
@@ -11,7 +12,8 @@ export class ProjetsListComponent implements OnInit {
   projets: Projets[] = [];
   errorMessage: string = ''; // Ajout de la propriété errorMessage
 
-  constructor(private projetsService: ProjetsService) {}
+  constructor(private projetsService: ProjetsService,
+              private router:Router) {}
 
   ngOnInit(): void {
     this.loadProjets();
@@ -28,23 +30,15 @@ export class ProjetsListComponent implements OnInit {
       }
     );
   }
-  deleteProjet(id: number | undefined): void {
-    if (id === undefined) {
-      this.errorMessage = 'ID du projet est indéfini.';
-      return;
-    }
 
-    if (confirm('Êtes-vous sûr de vouloir supprimer ce projet ?')) {
-      this.projetsService.deleteProjets(id).subscribe(
-        () => {
-          this.projets = this.projets.filter(projet => projet.id !== id);
-        },
-        (error) => {
-          console.error('Erreur lors de la suppression du projet', error);
-          this.errorMessage = 'Une erreur est survenue lors de la suppression du projet.'; // Attribution d'un message d'erreur
-        }
-      );
-    }
+  toTaches(id:number | undefined){
+    this.router.navigate(['taches', id])
   }
 
+  addTache(id:number | undefined){
+    this.router.navigate(['taches/add', id])
+  }
+
+
 }
+
