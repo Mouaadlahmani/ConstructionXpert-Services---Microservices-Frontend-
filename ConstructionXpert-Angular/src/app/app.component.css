@@ -4,11 +4,20 @@
 
 mat-toolbar {
   position: fixed;
-  top: -20px; /* Move the toolbar up by 20px */
+  top: -15px;
   width: 100%;
   z-index: 1000;
 }
 
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  padding-left: 15px;
+  font-family: 'Arial', sans-serif;
+}
+
 router-outlet + * {
-  padding-top: 44px; /* Adjust this value to match the new top offset */
+  padding-top: 44px;
 }

@@ -22,7 +22,7 @@ export class AddRessourcesComponent implements OnInit{
     this.id = this.route.snapshot.params['id'];
   }
 
-  addCours(){
+  addRessource(){
     this.service.addRessource(this.id,this.ressources).subscribe(
       data=>{
         console.log(data);
@@ -36,7 +36,7 @@ export class AddRessourcesComponent implements OnInit{
   }
 
   onSubmit(){
-    this.addCours()
+    this.addRessource()
     this.router.navigate(['ressources', this.id])
   }
 
