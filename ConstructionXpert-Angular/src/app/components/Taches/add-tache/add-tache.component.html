@@ -1,0 +1,49 @@
+<div class="container">
+  <h2>Ajouter un Ressource</h2>
+
+  <form (ngSubmit)="onSubmit()" #projetForm="ngForm">
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input
+        type="text"
+        id="description"
+        class="form-control"
+        [(ngModel)]="tache.description"
+        name="description"
+        required
+        #description="ngModel"
+      />
+      <div *ngIf="description.invalid && description.touched" class="text-danger">
+        La description est requise.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="dateDebut">Date Debut</label>
+      <input
+        type="date"
+        id="dateDebut"
+        class="form-control"
+        [(ngModel)]="tache.dateDebut"
+        name="dateDebut"
+        required
+        #dateDebut="ngModel"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="dateFin">Date Fin</label>
+      <input
+        type="date"
+        id="dateFin"
+        class="form-control"
+        [(ngModel)]="tache.dateFin"
+        name="dateFin"
+        required
+        #dateFin="ngModel"
+      />
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="projetForm.invalid">Ajouter Tache</button>
+  </form>
+</div>
