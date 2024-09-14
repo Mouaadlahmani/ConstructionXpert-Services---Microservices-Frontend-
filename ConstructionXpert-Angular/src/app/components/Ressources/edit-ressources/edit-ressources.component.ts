@@ -32,6 +32,7 @@ export class EditRessourcesComponent implements OnInit{
     this.service.modifyRessource(this.id, this.ressource).subscribe(
       data=>{
         console.log(this.ressource)
+        this.router.navigate(['ressources', this.ressource.tacheId])
       }
     )
   }

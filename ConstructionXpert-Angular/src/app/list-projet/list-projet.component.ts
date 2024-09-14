@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Projets } from '../model/projet';
-import { ProjetsService } from '../services/projet.service';
+import { ProjetsService } from '../services/projet/projet.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-projet-list',
@@ -11,7 +12,8 @@ export class ProjetsListComponent implements OnInit {
   projets: Projets[] = [];
   errorMessage: string = ''; // Ajout de la propriété errorMessage
 
-  constructor(private projetsService: ProjetsService) {}
+  constructor(private projetsService: ProjetsService,
+              private router:Router) {}
 
   ngOnInit(): void {
     this.loadProjets();
@@ -28,5 +30,15 @@ export class ProjetsListComponent implements OnInit {
       }
     );
   }
+
+  toTaches(id:number | undefined){
+    this.router.navigate(['taches', id])
+  }
+
+  addTache(id:number | undefined){
+    this.router.navigate(['taches/add', id])
+  }
+
+
 }
 

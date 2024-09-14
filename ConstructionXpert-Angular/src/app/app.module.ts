@@ -20,6 +20,10 @@ import {ProjetsListComponent} from "./list-projet/list-projet.component";
 import {AuthInterceptor} from "./Interceptor/auth.interceptor";
 import { DisplayRessourcesComponent } from './components/Ressources/display-ressources/display-ressources.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
+import { TacheComponent } from './components/Taches/tache/tache.component';
+import { AddTacheComponent } from './components/Taches/add-tache/add-tache.component';
+import { DispalyTachesComponent } from './components/Taches/dispaly-taches/dispaly-taches.component';
+import { EditTacheComponent } from './components/Taches/edit-tache/edit-tache.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,11 @@ import {MatToolbarModule} from "@angular/material/toolbar";
     EditRessourcesComponent,
     ProjetComponent,
     ProjetsListComponent,
-    DisplayRessourcesComponent
+    DisplayRessourcesComponent,
+    TacheComponent,
+    AddTacheComponent,
+    DispalyTachesComponent,
+    EditTacheComponent
   ],
   imports: [
     BrowserModule,

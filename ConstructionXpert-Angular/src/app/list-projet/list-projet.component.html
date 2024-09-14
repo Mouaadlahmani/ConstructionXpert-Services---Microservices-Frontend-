@@ -12,13 +12,16 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let projet of projets">
+      <tr (click)="toTaches(projet.id)" *ngFor="let projet of projets">
         <td>{{ projet.id }}</td>
         <td>{{ projet.nom }}</td>
         <td>{{ projet.description }}</td>
         <td>{{ projet.dateDebut | date }}</td>
         <td>{{ projet.dateFin | date }}</td>
         <td>{{ projet.budget | currency }}</td>
+        <td>
+          <button class="btn btn-primary" (click)="addTache(projet.id)">Ajouter Tache</button>
+        </td>
       </tr>
     </tbody>
   </table>

@@ -1,7 +1,7 @@
 // src/app/projet/projet.component.ts
 import { Component } from '@angular/core';
 import { Projets } from '../model/projet';
-import { ProjetsService } from '../services/projet.service';
+import { ProjetsService } from '../services/projet/projet.service';
 
 @Component({
   selector: 'app-projet',
