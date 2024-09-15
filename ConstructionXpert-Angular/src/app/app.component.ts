@@ -17,14 +17,8 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.checkpath();
-    this.router.events.subscribe(() => this.checkpath());
   }
 
-  protected checkpath() {
-    const url = this.router.url;
-    this.showNavButtons = url.startsWith('/login');
-  }
 
   logout():void{
     this.service.logout();

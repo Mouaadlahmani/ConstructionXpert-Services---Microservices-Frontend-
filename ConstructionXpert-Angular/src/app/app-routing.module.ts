@@ -12,6 +12,7 @@ import {AddTacheComponent} from "./components/Taches/add-tache/add-tache.compone
 import {RessourcesComponent} from "./components/Ressources/ressources/ressources.component";
 import {TacheComponent} from "./components/Taches/tache/tache.component";
 import {EditTacheComponent} from "./components/Taches/edit-tache/edit-tache.component";
+import {authGuardGuard} from "./Guards/auth-guard.guard";
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'prefix' },
@@ -34,7 +35,7 @@ const routes: Routes = [
   ]
   },
   { path: 'create-projet', component: ProjetComponent },   // Chemin vers le composant de création de projet
-  { path: 'all-projets', component: ProjetsListComponent }, // Chemin vers le composant de la liste des projets
+  { path: 'all-projets', component: ProjetsListComponent , canActivate:[authGuardGuard]}, // Chemin vers le composant de la liste des projets
 ];
 
 @NgModule({
